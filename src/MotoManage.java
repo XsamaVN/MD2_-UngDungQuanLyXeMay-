@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -64,7 +65,7 @@ public class MotoManage implements InterfaceQLXM<Moto>{
     public void findByName(String name) {
         boolean find = false;
         for (Moto moto : listMoto) {
-            if (moto.getName().indexOf(name) != -1) {
+            if (moto.getName().contains(name)) {
                 System.out.println(moto);
                 find = true;
             }
@@ -91,18 +92,22 @@ public class MotoManage implements InterfaceQLXM<Moto>{
 
     @Override
     public void sortUpByCC() {
-        listMoto.sort((a, b) -> Integer.compare((int) a.getCylynderCapacity() , b.getCylynderCapacity()));
+        List<Moto> listSort = new LinkedList<>();
+        listSort.addAll(listMoto);
+        listSort.sort(Comparator.comparingInt(Moto::getCylynderCapacity));
 //            System.out.println(listMoto);
-        for (Moto item: listMoto) {
+        for (Moto item: listSort) {
             System.out.println(item);
         }
     }
 
     @Override
     public void sortDownByCC() {
-        listMoto.sort((a, b) -> Integer.compare((int) b.getCylynderCapacity() , a.getCylynderCapacity()));
-        for (Moto item: listMoto) {
-            System.out.println(item);
+        List<Moto> listSort2 = new LinkedList<>();
+        listSort2.addAll(listMoto);
+        listSort2.sort((a, b) -> Integer.compare( b.getCylynderCapacity() , a.getCylynderCapacity()));
+        for (Moto item2: listSort2) {
+            System.out.println(item2);
         }
     }
 }

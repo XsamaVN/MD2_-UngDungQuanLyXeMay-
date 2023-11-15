@@ -1,5 +1,3 @@
-import java.util.List;
-
 public interface InterfaceQLXM <T> {
     void addNew(T t);
     void showAll();

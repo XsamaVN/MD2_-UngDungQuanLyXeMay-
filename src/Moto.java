@@ -1,13 +1,10 @@
 public class Moto {
-    int id;
-    String name;
-    double price;
-    int cylynderCapacity;
-    static int idIncrement = 1;
+   private final int id;
+   private final String name;
+   private final double price;
+   private final int cylynderCapacity;
+   static int idIncrement = 1;
 
-    public Moto() {
-
-    }
 
     public Moto(String name, double price, int cylynderCapacity) {
         this.id = idIncrement;
@@ -17,36 +14,16 @@ public class Moto {
         idIncrement ++;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public int getCylynderCapacity() {
         return cylynderCapacity;
-    }
-
-    public void setCylynderCapacity(int cylynderCapacity) {
-        this.cylynderCapacity = cylynderCapacity;
     }
 
 
