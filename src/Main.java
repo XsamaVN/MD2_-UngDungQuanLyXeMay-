@@ -31,7 +31,7 @@ public class Main {
                     motoManage.addNew(new Moto(motoName,motoPrice,motoCylynderCapacity));
                     System.out.println("thêm thành công!!!");
                 }
-                if(choice == 2){
+                else if(choice == 2){
                     System.out.println("Nhập tên xe muốn sửa:");
                     String motoName1 = word.nextLine();
                     System.out.println("Nhập tên mới: ");
@@ -42,21 +42,21 @@ public class Main {
                     int motoCylynderCapacity2 = number.nextInt();
                     motoManage.edit(motoName1, new Moto(motoName2,motoPrice2,motoCylynderCapacity2));
                 }
-                if(choice == 3){
+                else if(choice == 3){
                     System.out.println("Nhập tên xe máy muốn xóa:");
                     String motoName3 = word.nextLine();
                     motoManage.delete(motoName3);
                 }
-                if(choice == 4){
+                else if(choice == 4){
                     System.out.println("Thông tin toàn bộ xe máy: ");
                     motoManage.showAll();
                 }
-                if(choice == 5){
+                else if(choice == 5){
                     System.out.println("Nhập để tìm kiếm xe máy");
                     String randomWord = word.nextLine();
                     motoManage.findByName(randomWord);
                 }
-                if(choice == 6){
+                else if(choice == 6){
                     System.out.println("---Tìm kiếm theo khoảng giá---\n" +
                             "Nhập vào số tiền giới hạn dưới:");
                     double lowPrice = number.nextDouble();
@@ -64,13 +64,21 @@ public class Main {
                     double highPrice = number.nextDouble();
                     motoManage.findValuesInRange(lowPrice,highPrice);
                 }
-                if(choice == 7){
+                else if(choice == 7){
                     System.out.println("Sắp xếp theo thứ tự phân khối tăng dần: ");
                     motoManage.sortUpByCC();
                 }
-                if(choice == 8){
+                else if(choice == 8){
                     System.out.println("Sắp xếp theo thứ tự phân khối giảm dần: ");
                     motoManage.sortDownByCC();
+
+                }
+                else if (choice == 0) {
+                    return;
+
+                }
+                else{
+                    System.out.println("Invalid");
                 }
             }
     }
